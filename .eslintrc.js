@@ -50,6 +50,13 @@ module.exports = {
         noSortAlphabetically: true,
       },
     ],
+    'react/require-default-props': [
+      2,
+      {
+        forbidDefaultForRequired: false,
+        functions: 'defaultArguments',
+      },
+    ],
     'import/order': [
       'error',
       {

@@ -35,7 +35,7 @@ const links = [
   },
 ];
 
-const MobileMenu = ({ isOpen }) => {
+const MobileMenu = ({ isOpen = false }) => {
   const controls = useAnimation();
 
   useEffect(() => {
@@ -51,7 +51,7 @@ const MobileMenu = ({ isOpen }) => {
       // TODO: Add "top" value equal to the header's height so mobile menu would be positioned right after the header, e.g. "top-20"
       //       Check out this screenshot for better understanding — https://user-images.githubusercontent.com/20713191/144218387-afd19e0c-c33d-4c8f-8cfe-b6e6214d236c.png
       // TODO: Add background color, e.g. "bg-white"
-      className="absolute right-8 left-8 z-[-1] hidden rounded-md px-8 pt-4 pb-7 lg:block md:right-4 md:left-4"
+      className="absolute left-8 right-8 z-[-1] hidden rounded-md px-8 pb-7 pt-4 lg:block md:left-4 md:right-4"
       initial="from"
       animate={controls}
       variants={variants}
@@ -75,10 +75,6 @@ const MobileMenu = ({ isOpen }) => {
 
 MobileMenu.propTypes = {
   isOpen: PropTypes.bool,
-};
-
-MobileMenu.defaultProps = {
-  isOpen: false,
 };
 
 export default MobileMenu;

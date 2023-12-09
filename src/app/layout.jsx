@@ -1,8 +1,11 @@
+import LayoutMain from 'layouts/layout-main';
+
 // eslint-disable-next-line react/prop-types
 const RootLayout = ({ children }) => (
   <html lang="en">
-    <head />
-    <body>{children}</body>
+    <body>
+      <LayoutMain>{children}</LayoutMain>
+    </body>
   </html>
 );
 
