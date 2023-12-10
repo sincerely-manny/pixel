@@ -20,6 +20,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@radix-ui/react-navigation-menu": "^1.1.4",
     "clsx": "^1.2.1",
     "file-loader": "^6.2.0",
     "framer-motion": "^9.0.1",
@@ -49,7 +50,7 @@
     "postcss": "^8.4.21",
     "postcss-import": "^15.1.0",
     "prettier": "^2.8.3",
-    "prettier-plugin-tailwindcss": "^0.2.2",
+    "prettier-plugin-tailwindcss": "^0.2.8",
     "svgo-loader": "^4.0.0",
     "url-loader": "^4.1.1"
   }

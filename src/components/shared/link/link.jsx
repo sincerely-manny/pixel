@@ -18,35 +18,31 @@ const styles = {
   theme: {},
 };
 
-const Link = ({
-  className: additionalClassName = null,
-  size = null,
-  theme = null,
-  to = null,
-  children,
-  ...props
-}) => {
-  const className = clsx(
-    size && theme && styles.base,
-    styles.size[size],
-    styles.theme[theme],
-    additionalClassName
-  );
+/** @type {React.ForwardRefRenderFunction<?, Link.propTypes>} */
+const Link = React.forwardRef(
+  ({ className: additionalClassName, size, theme, to, children, ...props }, ref) => {
+    const className = clsx(
+      size && theme && styles.base,
+      styles.size[size],
+      styles.theme[theme],
+      additionalClassName
+    );
 
-  if (to.startsWith('/')) {
+    if (to.startsWith('/')) {
+      return (
+        <NextLink className={className} href={to} ref={ref} {...props}>
+          {children}
+        </NextLink>
+      );
+    }
+
     return (
-      <NextLink className={className} href={to} {...props}>
+      <a className={className} href={to} ref={ref} {...props}>
         {children}
-      </NextLink>
+      </a>
     );
   }
-
-  return (
-    <a className={className} href={to} {...props}>
-      {children}
-    </a>
-  );
-};
+);
 
 Link.propTypes = {
   className: PropTypes.string,
@@ -55,5 +51,14 @@ Link.propTypes = {
   theme: PropTypes.oneOf(Object.keys(styles.theme)),
   children: PropTypes.node.isRequired,
 };
+
+Link.defaultProps = {
+  className: null,
+  to: null,
+  size: null,
+  theme: null,
+};
+
+Link.displayName = 'Link';
 
 export default Link;

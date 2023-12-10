@@ -1,9 +1,15 @@
-import Link from 'components/shared/link';
-
 const Home = () => (
   <div>
-    <h1>Pixel Point Next.js Tailwind Starter</h1>
-    <Link to="about">About</Link>
+    <h1>
+      Unlock valuable
+      <br />
+      insights from
+      <br />
+      subscription data
+    </h1>
+    <p className="text-xl">
+      Analyze your subscription ecosystem for cost optimization and risk management
+    </p>
   </div>
 );
 

@@ -1,7 +1,15 @@
 /* TODO: Add global styles: font-size, color, and other if needed */
 @layer base {
   body {
-    @apply min-w-[320px] font-sans antialiased;
+    @apply min-w-[320px] bg-black font-sans text-grey-94 antialiased;
     -webkit-tap-highlight-color: transparent;
+  }
+
+  svg {
+    @apply inline h-[0.8em] w-[0.8em];
+  }
+
+  h1 {
+    @apply font-heading text-3xl text-grey-98;
   }
 }
