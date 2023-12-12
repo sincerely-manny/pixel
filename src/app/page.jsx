@@ -54,18 +54,19 @@ const Home = () => (
     {/* END INVIOCE */}
     {/* SPOTLIGHTS */}
     {spotlights.map(([title, subtitle, description]) => (
-      <div className="col-span-4 grid grid-cols-4 gap-x-10" key={title}>
-        <div className="col-span-3">
-          <div>
-            <div className="relative inline-block">
+      <div className="col-span-4 grid grid-cols-4 gap-x-10 pb-6" key={title}>
+        <div className="col-span-3 flex flex-col gap-y-8">
+          <div className="flex flex-col gap-3">
+            <div className="relative w-min">
               <div className="absolute left-0 top-0 h-full w-full rounded-full bg-primary-1 opacity-30 blur-[200px]" />
-              <h3 className="relative bg-violet-gradient-2 bg-clip-text font-heading text-4xl text-transparent">
+              <h3 className="relative bg-violet-gradient-2 bg-clip-text pr-2 font-heading text-4xl text-transparent">
                 {title}
               </h3>
             </div>
-            <h4>{subtitle}</h4>
+            <h4 className="text-xl">{subtitle}</h4>
           </div>
-          <p>{description}</p>
+          <hr className="border-white opacity-10" />
+          <p className="text-lg">{description}</p>
         </div>
       </div>
     ))}
