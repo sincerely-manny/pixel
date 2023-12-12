@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => (
   <footer className="safe-paddings">
-    <div className="container">Footer!</div>
+    <div className="container">&nbsp;</div>
   </footer>
 );
 
