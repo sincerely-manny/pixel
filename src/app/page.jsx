@@ -32,10 +32,12 @@ const Home = () => (
         </p>
       </div>
       <form action="/">
-        <div className="border-gradient-td-white relative w-[500px] overflow-hidden rounded-2xl">
-          <div className="absolute left-0 top-0 h-full w-full bg-white bg-opacity-10 mix-blend-overlay" />
-          <div className="absolute left-0 top-[-30%] h-[160%] w-full bg-white-gradient-267deg-to-17p mix-blend-overlay" />
-          <div className="absolute left-0 top-0 h-[160%] w-full bg-white-gradient-122deg-to-50p mix-blend-overlay" />
+        <div className="border-gradient-td-white relative w-[500px] rounded-2xl">
+          <div className="absolute left-0 top-0 h-full w-full overflow-hidden rounded-2xl">
+            <div className="absolute left-0 top-0 h-full w-full bg-white bg-opacity-10 mix-blend-overlay" />
+            <div className="absolute left-0 top-[-30%] h-[160%] w-full bg-white-gradient-267deg-to-17p mix-blend-overlay" />
+            <div className="absolute left-0 top-0 h-[160%] w-full bg-white-gradient-122deg-to-50p mix-blend-overlay" />
+          </div>
           <div className="relative flex w-full items-stretch justify-stretch">
             <input
               type="text"
