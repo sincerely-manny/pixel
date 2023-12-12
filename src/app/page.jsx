@@ -1,5 +1,23 @@
 import Button from 'components/shared/button';
 
+const spotlights = [
+  [
+    '3x',
+    'Faster Analysis Cycles',
+    'Stop the tedium of manual subscription data review. Quickly access essential information from all subscriptions.',
+  ],
+  [
+    '10%+',
+    'Savings on Costs',
+    'Insights into both subscription data and expenditure lead to rapid, smart cost-cutting strategies.',
+  ],
+  [
+    '30',
+    'Day Setup',
+    'Implement swiftly with straightforward, no-code processes and ready-to-use integrations.',
+  ],
+];
+
 const Home = () => (
   <div className="grid grid-cols-12 items-center gap-x-10 gap-y-16">
     {/* FREE TRIAL FORM */}
@@ -18,12 +36,12 @@ const Home = () => (
           <div className="absolute left-0 top-0 h-full w-full bg-white bg-opacity-10 mix-blend-overlay" />
           <div className="absolute left-0 top-[-30%] h-[160%] w-full bg-white-gradient-267deg-to-17p mix-blend-overlay" />
           <div className="absolute left-0 top-0 h-[160%] w-full bg-white-gradient-122deg-to-50p mix-blend-overlay" />
-          <div className="relative flex w-full items-center justify-stretch">
+          <div className="relative flex w-full items-stretch justify-stretch">
             <input
               type="text"
               placeholder="Your business email..."
               name="email"
-              className="grow bg-transparent pl-7 pr-2 text-base text-white opacity-80 outline-0 placeholder:bg-violet-gradient placeholder:from-primary-1 placeholder:to-primary-3 placeholder:bg-clip-text placeholder:text-transparent"
+              className="grow bg-transparent pl-7 pr-2 text-base text-white opacity-80 outline-0 placeholder:bg-violet-gradient placeholder:bg-clip-text placeholder:text-transparent"
             />
             <Button type="submit">Free Trial</Button>
           </div>
@@ -34,6 +52,24 @@ const Home = () => (
     {/* INVIOCE */}
     <div className="col-span-6 grid grid-cols-6 gap-x-10">-</div>
     {/* END INVIOCE */}
+    {/* SPOTLIGHTS */}
+    {spotlights.map(([title, subtitle, description]) => (
+      <div className="col-span-4 grid grid-cols-4 gap-x-10" key={title}>
+        <div className="col-span-3">
+          <div>
+            <div className="relative inline-block">
+              <div className="absolute left-0 top-0 h-full w-full rounded-full bg-primary-1 opacity-30 blur-[200px]" />
+              <h3 className="relative bg-violet-gradient-2 bg-clip-text font-heading text-4xl text-transparent">
+                {title}
+              </h3>
+            </div>
+            <h4>{subtitle}</h4>
+          </div>
+          <p>{description}</p>
+        </div>
+      </div>
+    ))}
+    {/* END SPOTLIGHTS */}
   </div>
 );
 

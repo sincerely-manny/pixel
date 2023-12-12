@@ -9,7 +9,7 @@
   @apply absolute bottom-0 left-0 right-0 top-0 z-0 border border-transparent mix-blend-overlay;
   content: '';
   border-radius: inherit;
-  background: linear-gradient(180deg, theme('colors.white'), theme('colors.black')) border-box;
+  background: linear-gradient(180deg, theme('colors.white'), theme('colors.white') 80) border-box;
   mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: destination-out;

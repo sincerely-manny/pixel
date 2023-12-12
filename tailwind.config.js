@@ -1,16 +1,7 @@
 /* eslint-disable global-require */
 const defaultTheme = require('tailwindcss/defaultTheme');
 
-const hexWithOpacity = (hex, opacityValue) => {
-  let hexNormalized = hex;
-  if (hex.length === 4) {
-    hexNormalized = `${hex[1]}${hex[1]}${hex[2]}${hex[2]}${hex[3]}${hex[3]}`;
-  } else if (hex.length === 7) {
-    hexNormalized = hex.substring(1, 7);
-  }
-  const hexOpacityVal = (opacityValue * 256).toString(16).split('.')[0];
-  return `#${hexNormalized}${hexOpacityVal.length === 1 ? `0${hexOpacityVal}` : hexOpacityVal}`;
-};
+const hexWithOpacity = require('./src/utils/hexWithOpacity');
 
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
@@ -116,6 +107,14 @@ module.exports = {
           fontWeight: '400',
         },
       ],
+      '4xl': [
+        '136px',
+        {
+          lineHeight: '1em',
+          letterSpacing: '-0.04em',
+          fontWeight: '200',
+        },
+      ],
     },
     borderRadius: {
       none: '0',
@@ -135,12 +134,15 @@ module.exports = {
       backgroundImage: (theme) => ({
         'violet-gradient':
           'linear-gradient(90deg, #EAC8F2 0%, #E6ADEC 32.41%, #D49EE8 71.97%, #CA97E6 100%)',
-        'white-gradient-267deg-to-17p': `linear-gradient(267deg, ${theme(
-          'colors.white'
-        )} 0%, ${hexWithOpacity(theme('colors.white'), 0.17)}  100%)`,
-        'white-gradient-122deg-to-50p': `linear-gradient(122deg, ${theme(
-          'colors.white'
-        )} 0%, ${hexWithOpacity(theme('colors.white'), 0.5)}  100%)`,
+        'white-gradient-267deg-to-17p': `linear-gradient(
+          267deg, ${theme('colors.white')} 0%, 
+          ${hexWithOpacity(theme('colors.white'), 0.17)}  100%)`,
+        'white-gradient-122deg-to-50p': `linear-gradient(
+          122deg, ${theme('colors.white')} 0%, 
+          ${hexWithOpacity(theme('colors.white'), 0.5)}  100%)`,
+        'violet-gradient-2': `linear-gradient(
+          135deg, #D383FC 21.78%, ${theme('colors.primary.2')} 39.25%,
+          ${hexWithOpacity(theme('colors.primary.2'), 0.2)} 86.85%)`,
       }),
     },
   },
