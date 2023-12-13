@@ -23,7 +23,7 @@ const Home = () => (
   <div className="grid grid-cols-12 items-center gap-x-10 gap-y-16">
     {/* FREE TRIAL FORM */}
     <div className="relative col-span-6 flex flex-col gap-10">
-      <div className="absolute left-0 top-0 aspect-square w-full -translate-y-2/3 rounded-full bg-primary-1 opacity-[15%] blur-[400px]" />
+      <div className="absolute left-0 top-0 aspect-square w-full -translate-y-2/3 rounded-full bg-primary-1 opacity-[15%] blur-[200px]" />
       <div className="relative flex flex-col gap-7">
         <h1 className="drop-shadow-heading-white">
           Unlock valuable insights from subscription data
@@ -64,7 +64,7 @@ const Home = () => (
         <div className="col-span-3 flex flex-col gap-y-8">
           <div className="flex flex-col gap-3">
             <div className="relative w-min">
-              <div className="absolute left-0 top-0 h-full w-full rounded-full bg-primary-1 opacity-30 blur-[200px]" />
+              <div className="absolute left-0 top-0 h-full w-full rounded-full bg-primary-1 opacity-30 blur-[100px]" />
               <h3 className="relative bg-violet-gradient-2 bg-clip-text pr-2 font-heading text-4xl text-transparent">
                 {title}
               </h3>

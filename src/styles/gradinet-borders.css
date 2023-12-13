@@ -30,7 +30,7 @@
 
 .border-gradient-rt-ld-white::before {
   background: linear-gradient(
-    to bottom left,
+    to bottom right,
     theme('colors.white'),
     transparent 15.6%,
     transparent 88.32%,
