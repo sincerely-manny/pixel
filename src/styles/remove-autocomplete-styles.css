@@ -4,6 +4,10 @@
     &:-webkit-autofill:hover,
     &:-webkit-autofill:focus {
       transition: background-color 5000s;
+
+      &::first-line {
+        @apply text-base;
+      }
     }
   }
 }

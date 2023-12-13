@@ -1,3 +1,4 @@
+import Invoice from 'components/pages/home/invoice';
 import Button from 'components/shared/button';
 
 const spotlights = [
@@ -32,18 +33,21 @@ const Home = () => (
         </p>
       </div>
       <form action="/">
-        <div className="border-gradient-td-white relative w-[500px] rounded-2xl">
+        <div className="border-gradient-td-white relative w-[500px] rounded-2xl p-1.5">
           <div className="absolute left-0 top-0 h-full w-full overflow-hidden rounded-2xl">
             <div className="absolute left-0 top-0 h-full w-full bg-white bg-opacity-10 mix-blend-overlay" />
             <div className="absolute left-0 top-[-30%] h-[160%] w-full bg-white-gradient-267deg-to-17p mix-blend-overlay" />
             <div className="absolute left-0 top-0 h-[160%] w-full bg-white-gradient-122deg-to-50p mix-blend-overlay" />
           </div>
-          <div className="relative flex w-full items-stretch justify-stretch">
+          <div className="relative flex w-full items-stretch justify-stretch gap-1.5">
             <input
               type="text"
               placeholder="Your business email..."
               name="email"
-              className="grow bg-transparent pl-7 pr-2 text-base text-white opacity-80 outline-0 placeholder:bg-violet-gradient placeholder:bg-clip-text placeholder:text-transparent"
+              className="remove-autocomplete-styles grow appearance-none rounded-full bg-transparent pl-7 pr-2
+              text-base text-white opacity-80 outline-0 
+              placeholder:bg-violet-gradient placeholder:bg-clip-text placeholder:text-transparent
+              autofill:text-base autofill:text-white [&:-webkit-autofill]:[-webkit-text-fill-color:theme('colors.white')]"
             />
             <Button type="submit">Free Trial</Button>
           </div>
@@ -52,7 +56,7 @@ const Home = () => (
     </div>
     {/* END FREE TRIAL FORM  */}
     {/* INVIOCE */}
-    <div className="col-span-6 grid grid-cols-6 gap-x-10">-</div>
+    <Invoice className="col-span-6" />
     {/* END INVIOCE */}
     {/* SPOTLIGHTS */}
     {spotlights.map(([title, subtitle, description]) => (

@@ -9,18 +9,38 @@
   @apply absolute bottom-0 left-0 right-0 top-0 z-0 border border-transparent mix-blend-overlay;
   content: '';
   border-radius: inherit;
-  background: linear-gradient(180deg, theme('colors.white'), theme('colors.white') 80) border-box;
+  background: linear-gradient(180deg, theme('colors.white'), #ffffff80) border-box;
   mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: destination-out;
   mask-composite: exclude;
-  z-index: -1;
 }
 
 .border-gradient-td-white {
-  @apply border-gradient p-1.5;
+  @apply border-gradient;
 }
 
 .border-gradient-td-white::before {
-  background: linear-gradient(180deg, theme('colors.white'), theme('colors.white') 80) border-box;
+  background: linear-gradient(180deg, theme('colors.white'), #ffffff80) border-box;
+}
+
+.border-gradient-rt-ld-white {
+  @apply border-gradient;
+}
+
+.border-gradient-rt-ld-white::before {
+  background: linear-gradient(
+    to bottom left,
+    theme('colors.white'),
+    transparent 15.6%,
+    transparent 88.32%,
+    theme('colors.white') 100%
+  );
+  @apply z-[1] opacity-60;
+}
+
+.border-gradient-rt-ld-white::after {
+  @apply absolute bottom-0 left-0 right-0 top-0 z-0 border border-white opacity-40 mix-blend-overlay;
+  content: '';
+  border-radius: inherit;
 }

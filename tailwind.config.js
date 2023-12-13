@@ -129,6 +129,7 @@ module.exports = {
     }),
     boxShadow: (theme) => ({
       'button-violet': `0 0 60px  ${hexWithOpacity(theme('colors.primary.1-hover'), 0.4)}`,
+      '2xl': `0 20px 80px 60px ${hexWithOpacity(theme('colors.black'), 0.7)}`,
     }),
     extend: {
       backgroundImage: (theme) => ({
