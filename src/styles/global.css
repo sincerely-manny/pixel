@@ -26,4 +26,9 @@
   h4 {
     @apply text-xl font-normal leading-[1.125em] tracking-[0.02em] text-grey-98;
   }
+
+  h5,
+  h6 {
+    @apply mb-3.5;
+  }
 }

@@ -18,7 +18,7 @@ const LayoutMain = ({ children }) => {
     <>
       <SEO />
       <Header isMobileMenuOpen={isMobileMenuOpen} onBurgerClick={handleHeaderBurgerClick} />
-      <main className="container">{children}</main>
+      <main className="container mt-24">{children}</main>
       <Footer />
       <MobileMenu isOpen={isMobileMenuOpen} />
     </>

@@ -43,19 +43,27 @@ module.exports = {
       xs: { max: '359px' },
     },
     fontSize: {
+      '4xs': [
+        '10px',
+        {
+          lineHeight: '1em',
+          fontWeight: 500,
+          letterSpacing: '0.04em',
+        },
+      ],
       '3xs': [
         '11px',
         {
           lineHeight: '1em',
           fontWeight: '500',
-          letterSpacing: '0.4em',
+          letterSpacing: '0.04em',
         },
       ],
       '2xs': [
         '12px',
         {
           lineHeight: '1em',
-          letterSpacing: '0.2em',
+          letterSpacing: '0.02em',
           fontWeight: '400',
         },
       ],
@@ -97,6 +105,12 @@ module.exports = {
           lineHeight: '1.5em',
           letterSpacing: '0.02em',
           fontWeight: '300',
+        },
+      ],
+      '2xl': [
+        '22px',
+        {
+          lineHeight: '1em',
         },
       ],
       '3xl': [

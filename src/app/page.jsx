@@ -20,7 +20,7 @@ const spotlights = [
 ];
 
 const Home = () => (
-  <div className="grid grid-cols-12 items-center gap-x-10 gap-y-16">
+  <div className="grid grid-cols-12 items-center gap-x-10 gap-y-[7.4rem]">
     {/* FREE TRIAL FORM */}
     <div className="relative col-span-6 flex flex-col gap-10">
       <div className="absolute left-0 top-0 aspect-square w-full -translate-y-2/3 rounded-full bg-primary-1 opacity-[15%] blur-[200px]" />
@@ -71,7 +71,7 @@ const Home = () => (
             </div>
             <h4 className="text-xl">{subtitle}</h4>
           </div>
-          <hr className="border-white opacity-10" />
+          <hr className="text-white opacity-10" />
           <p className="text-lg">{description}</p>
         </div>
       </div>
