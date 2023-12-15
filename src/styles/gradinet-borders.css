@@ -1,12 +1,13 @@
 @layer utilities {
 }
 
+/* 
 .border-gradient {
   @apply relative;
-}
+} */
 
 .border-gradient::before {
-  @apply absolute bottom-0 left-0 right-0 top-0 z-0 border border-transparent mix-blend-overlay;
+  @apply absolute bottom-0 left-0 right-0 top-0 border border-transparent mix-blend-overlay;
   content: '';
   border-radius: inherit;
   background: linear-gradient(180deg, theme('colors.white'), #ffffff80) border-box;
@@ -30,17 +31,60 @@
 
 .border-gradient-rt-ld-white::before {
   background: linear-gradient(
-    to bottom right,
-    theme('colors.white'),
-    transparent 15.6%,
-    transparent 88.32%,
-    theme('colors.white') 100%
-  );
-  @apply z-[1] opacity-60;
+      to bottom left,
+      theme('colors.white'),
+      transparent 15.6%,
+      transparent 88.32%,
+      theme('colors.white') 100%
+    )
+    border-box;
+  @apply opacity-60;
 }
 
 .border-gradient-rt-ld-white::after {
-  @apply absolute bottom-0 left-0 right-0 top-0 z-0 border border-white opacity-40 mix-blend-overlay;
+  @apply absolute bottom-0 left-0 right-0 top-0 border border-white opacity-40 mix-blend-overlay;
   content: '';
   border-radius: inherit;
+}
+
+/* --------------------------------- */
+
+.border-gradient-mockup {
+  @apply border-gradient opacity-100;
+}
+
+.border-gradient-mockup::before {
+  background: var(--bg-gradient);
+  @apply opacity-100;
+}
+
+.border-gradient-mockup::after {
+  @apply absolute bottom-0 left-0 right-0 top-0 border border-transparent opacity-40 mix-blend-overlay;
+  content: '';
+  border-radius: inherit;
+  background: var(--bg-gradient);
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+}
+
+.mockup-left {
+  --bg-gradient: linear-gradient(
+      to bottom right,
+      transparent,
+      theme('colors.white') 28%,
+      transparent 87%
+    )
+    border-box;
+}
+
+.mockup-right {
+  --bg-gradient: linear-gradient(
+      to bottom left,
+      transparent,
+      theme('colors.white') 28%,
+      transparent 87%
+    )
+    border-box;
 }

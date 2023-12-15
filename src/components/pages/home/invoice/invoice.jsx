@@ -6,10 +6,11 @@ import AccountTable from './accountTable';
 import BgBlurredLines from './bgBlurredLines';
 import BgBlurredShapes from './bgBlurredShapes';
 import whiteNoise from './images/bg-white-noise.png';
+import Mockups from './mockups';
 import TableHeader from './tableHeader';
 
 const styles = {
-  base: 'relative grid grid-cols-6 gap-x-10',
+  base: 'relative grid grid-cols-6 gap-x-10 ',
 };
 
 const Invoice = ({ className: additionalClassName = null }) => {
@@ -17,6 +18,7 @@ const Invoice = ({ className: additionalClassName = null }) => {
   return (
     <div className={className}>
       <BgBlurredShapes />
+      <Mockups />
       <div className="relative col-span-4 col-start-2 rounded-sm shadow-2xl">
         <div className="absolute left-0 top-0 h-full w-full overflow-hidden rounded-sm backdrop-blur-[10px]">
           <div
