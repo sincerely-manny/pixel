@@ -1,5 +1,6 @@
 import Invoice from 'components/pages/home/invoice';
 import Button from 'components/shared/button';
+import TextInput from 'components/shared/text-input';
 
 const spotlights = [
   [
@@ -23,7 +24,8 @@ const Home = () => (
   <div className="grid grid-cols-12 items-center gap-x-10 gap-y-[7.4rem]">
     {/* FREE TRIAL FORM */}
     <div className="relative col-span-6 flex flex-col gap-10">
-      <div className="absolute left-0 top-0 aspect-square w-full -translate-y-2/3 rounded-full bg-primary-1 opacity-[15%] blur-[200px]" />
+      <div className="absolute left-1/2 top-0 aspect-square w-[calc(100%+500px)] -translate-x-1/2 -translate-y-2/3 rounded-full bg-violet-radial opacity-[15%]" />
+
       <div className="relative flex flex-col gap-7">
         <h1 className="drop-shadow-heading-white">
           Unlock valuable insights from subscription data
@@ -33,25 +35,9 @@ const Home = () => (
         </p>
       </div>
       <form action="/">
-        <div className="border-gradient-td-white relative w-[500px] rounded-2xl p-1.5">
-          <div className="absolute left-0 top-0 h-full w-full overflow-hidden rounded-2xl">
-            <div className="absolute left-0 top-0 h-full w-full bg-white bg-opacity-10 mix-blend-overlay" />
-            <div className="absolute left-0 top-[-30%] h-[160%] w-full bg-white-gradient-267deg-to-17p mix-blend-overlay" />
-            <div className="absolute left-0 top-0 h-[160%] w-full bg-white-gradient-122deg-to-50p mix-blend-overlay" />
-          </div>
-          <div className="relative flex w-full items-stretch justify-stretch gap-1.5">
-            <input
-              type="text"
-              placeholder="Your business email..."
-              name="email"
-              className="remove-autocomplete-styles grow appearance-none rounded-full bg-transparent pl-7 pr-2
-              text-base text-white opacity-80 outline-0 
-              placeholder:bg-violet-gradient placeholder:bg-clip-text placeholder:text-transparent
-              autofill:text-base autofill:text-white [&:-webkit-autofill]:[-webkit-text-fill-color:theme('colors.white')]"
-            />
-            <Button type="submit">Free Trial</Button>
-          </div>
-        </div>
+        <TextInput placeholder="Enter your email" name="email" className="max-w-[500px]">
+          <Button type="submit">Free Trial</Button>
+        </TextInput>
       </form>
     </div>
     {/* END FREE TRIAL FORM  */}

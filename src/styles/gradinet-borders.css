@@ -5,7 +5,7 @@
 .border-gradient {
   @apply relative;
 } */
-
+/* 
 .border-gradient::before {
   @apply absolute bottom-0 left-0 right-0 top-0 border border-transparent mix-blend-overlay;
   content: '';
@@ -30,14 +30,11 @@
 }
 
 .border-gradient-rt-ld-white::before {
-  background: linear-gradient(
-      to bottom left,
+  background: linear-gradient(to bottom left,
       theme('colors.white'),
       transparent 15.6%,
       transparent 88.32%,
-      theme('colors.white') 100%
-    )
-    border-box;
+      theme('colors.white') 100%) border-box;
   @apply opacity-60;
 }
 
@@ -48,13 +45,16 @@
 }
 
 /* --------------------------------- */
-
+/*
 .border-gradient-mockup {
   @apply border-gradient opacity-100;
 }
 
 .border-gradient-mockup::before {
-  background: var(--bg-gradient);
+  background: linear-gradient(var(--bg-gradient-direction),
+      transparent,
+      theme('colors.white') 28%,
+      transparent 87%) border-box;
   @apply opacity-100;
 }
 
@@ -62,7 +62,11 @@
   @apply absolute bottom-0 left-0 right-0 top-0 border border-transparent opacity-40 mix-blend-overlay;
   content: '';
   border-radius: inherit;
-  background: var(--bg-gradient);
+  background: linear-gradient(var(--bg-gradient-direction),
+      transparent,
+      theme('colors.white') 28%,
+      transparent 87%) border-box;
+  ;
   mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: destination-out;
@@ -70,21 +74,18 @@
 }
 
 .mockup-left {
-  --bg-gradient: linear-gradient(
-      to bottom right,
-      transparent,
-      theme('colors.white') 28%,
-      transparent 87%
-    )
-    border-box;
+  --bg-gradient-direction: to bottom right;
 }
 
 .mockup-right {
-  --bg-gradient: linear-gradient(
-      to bottom left,
-      transparent,
-      theme('colors.white') 28%,
-      transparent 87%
-    )
-    border-box;
+  --bg-gradient-direction: to bottom left;
 }
+
+.mockup-top-left {
+  --bg-gradient-direction: 135deg;
+}
+
+.mockup-top-right {
+  --bg-gradient-direction: 225deg;
+}
+*/

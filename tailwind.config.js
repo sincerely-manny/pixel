@@ -150,6 +150,9 @@ module.exports = {
       backgroundImage: (theme) => ({
         'violet-gradient':
           'linear-gradient(90deg, #EAC8F2 0%, #E6ADEC 32.41%, #D49EE8 71.97%, #CA97E6 100%)',
+        'violet-radial': `radial-gradient(circle, ${theme(
+          'colors.primary.1'
+        )} 0%, transparent 75%)`,
         'white-gradient-267deg-to-17p': `linear-gradient(
           267deg, ${theme('colors.white')} 0%, 
           ${hexWithOpacity(theme('colors.white'), 0.17)}  100%)`,

@@ -2,15 +2,15 @@ import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import AccountTable from './accountTable';
-import BgBlurredLines from './bgBlurredLines';
-import BgBlurredShapes from './bgBlurredShapes';
-import whiteNoise from './images/bg-white-noise.png';
-import Mockups from './mockups';
-import TableHeader from './tableHeader';
+import AccountTable from './account-table';
+import BgBlurredLines from './bg-blurred-lines';
+import BgBlurredShapes from './bg-blurred-shapes';
+import BorderMain from './border-main';
+import TableHeader from './table-header';
+// import Mockups from './mockups';
 
 const styles = {
-  base: 'relative grid grid-cols-6 gap-x-10 ',
+  base: 'relative grid grid-cols-6 gap-x-10 h-[685px]',
 };
 
 const Invoice = ({ className: additionalClassName = null }) => {
@@ -18,25 +18,18 @@ const Invoice = ({ className: additionalClassName = null }) => {
   return (
     <div className={className}>
       <BgBlurredShapes />
-      <Mockups />
-      <div className="relative col-span-4 col-start-2 rounded-sm shadow-2xl">
-        <div className="absolute left-0 top-0 h-full w-full overflow-hidden rounded-sm backdrop-blur-[10px]">
-          <div
-            className="absolute left-0 top-0 h-full w-full bg-repeat opacity-[4%]"
-            style={{ backgroundImage: `url(${whiteNoise.src})` }}
-          />
-          <BgBlurredLines />
-        </div>
+      {/* <Mockups /> */}
+      {/* TODO: Backdrop-blur */}
+      <div className="relative col-span-4 col-start-2">
+        <BgBlurredLines />
         {/* actual content */}
         <div className="relative p-6 pb-4 text-white">
           <TableHeader />
           <AccountTable />
         </div>
+        <BorderMain />
       </div>
       {/* border w/ gradient */}
-      <div className="pointer-events-none absolute bottom-0 left-0 right-0 top-0 col-span-4 col-start-2 grid items-stretch mix-blend-overlay">
-        <div className="border-gradient-rt-ld-white relative rounded-sm" />
-      </div>
     </div>
   );
 };

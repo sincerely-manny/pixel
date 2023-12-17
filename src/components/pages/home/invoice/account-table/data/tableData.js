@@ -7,4 +7,5 @@ export default [
   ['Delivery and Pro Services', 1, '$50,000'],
   ['Managed Services', 1, '$50,000'],
   ['Contract A1 Service', 800, '$50,000'],
+  ['Contract A2 Service', 200, 'free'],
 ];
