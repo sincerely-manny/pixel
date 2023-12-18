@@ -1,7 +1,9 @@
 module.exports = {
   poweredByHeader: false,
   trailingSlash: true,
-  experimental: {},
+  experimental: {
+    swcPlugins: [['@swc-jotai/react-refresh', {}]],
+  },
   webpack(config) {
     // https://github.com/vercel/next.js/issues/25950#issuecomment-863298702
     const fileLoaderRule = config.module.rules.find((rule) => {

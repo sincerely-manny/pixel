@@ -2,6 +2,7 @@
 import { Roboto_Flex, Poppins } from 'next/font/google';
 import localFont from 'next/font/local';
 
+import JotaiProvider from 'components/shared/jotai-provider';
 import LayoutMain from 'layouts/layout-main';
 
 const roboto = Roboto_Flex({
@@ -25,7 +26,9 @@ const editorialNew = localFont({
 const RootLayout = ({ children }) => (
   <html lang="en" className={`${roboto.variable} ${poppins.variable} ${editorialNew.variable}`}>
     <body>
-      <LayoutMain>{children}</LayoutMain>
+      <JotaiProvider>
+        <LayoutMain>{children}</LayoutMain>
+      </JotaiProvider>
     </body>
   </html>
 );

@@ -1,8 +1,9 @@
 import { motion, useAnimation } from 'framer-motion';
-import PropTypes from 'prop-types';
+import { useAtom } from 'jotai';
 import React, { useEffect } from 'react';
 
 import Link from 'components/shared/link';
+import { mobileMenuOpenAtom } from 'store';
 
 const ANIMATION_DURATION = 0.2;
 
@@ -35,23 +36,25 @@ const links = [
   },
 ];
 
-const MobileMenu = ({ isOpen = false }) => {
+const MobileMenu = () => {
   const controls = useAnimation();
+  // eslint-disable-next-line no-unused-vars
+  const [isMobileMenuOpen, setMobileMenuOpen] = useAtom(mobileMenuOpenAtom);
 
   useEffect(() => {
-    if (isOpen) {
+    if (isMobileMenuOpen) {
       controls.start('to');
     } else {
       controls.start('from');
     }
-  }, [isOpen, controls]);
+  }, [isMobileMenuOpen, controls]);
 
   return (
     <motion.nav
       // TODO: Add "top" value equal to the header's height so mobile menu would be positioned right after the header, e.g. "top-20"
       //       Check out this screenshot for better understanding — https://user-images.githubusercontent.com/20713191/144218387-afd19e0c-c33d-4c8f-8cfe-b6e6214d236c.png
       // TODO: Add background color, e.g. "bg-white"
-      className="absolute left-8 right-8 z-[-1] hidden rounded-md px-8 pb-7 pt-4 lg:block md:left-4 md:right-4"
+      className="rounded-md absolute left-8 right-8 z-[-1] hidden px-8 pb-7 pt-4 lg:block md:left-4 md:right-4"
       initial="from"
       animate={controls}
       variants={variants}
@@ -71,10 +74,6 @@ const MobileMenu = ({ isOpen = false }) => {
       {/* TODO: Add a button if needed */}
     </motion.nav>
   );
-};
-
-MobileMenu.propTypes = {
-  isOpen: PropTypes.bool,
 };
 
 export default MobileMenu;

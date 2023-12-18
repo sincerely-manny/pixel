@@ -1,7 +1,5 @@
-'use client';
-
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import React from 'react';
 
 import Footer from 'components/shared/footer';
 import Header from 'components/shared/header';
@@ -10,20 +8,15 @@ import SEO from 'components/shared/seo';
 
 import 'styles/main.css';
 
-const LayoutMain = ({ children }) => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const handleHeaderBurgerClick = () => setIsMobileMenuOpen(!isMobileMenuOpen);
-  return (
-    <>
-      <SEO />
-      <Header isMobileMenuOpen={isMobileMenuOpen} onBurgerClick={handleHeaderBurgerClick} />
-      <main className="container mt-24">{children}</main>
-      <Footer />
-      <MobileMenu isOpen={isMobileMenuOpen} />
-    </>
-  );
-};
+const LayoutMain = ({ children }) => (
+  <>
+    <SEO />
+    <Header />
+    <main className="container mt-24">{children}</main>
+    <Footer />
+    <MobileMenu />
+  </>
+);
 
 LayoutMain.propTypes = {
   children: PropTypes.node.isRequired,
