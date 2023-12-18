@@ -1,3 +1,5 @@
+'use client';
+
 import { motion, useAnimation } from 'framer-motion';
 import { useAtom } from 'jotai';
 import React, { useEffect } from 'react';
