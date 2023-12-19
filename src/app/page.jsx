@@ -1,6 +1,5 @@
 import Invoice from 'components/pages/home/invoice';
-import Button from 'components/shared/button';
-import TextInput from 'components/shared/text-input';
+import TrialForm from 'components/pages/home/trial-form';
 
 const spotlights = [
   [
@@ -34,17 +33,12 @@ const Home = () => (
           Analyze your subscription ecosystem for cost optimization and risk management
         </p>
       </div>
-      <form action="/">
-        <TextInput placeholder="Enter your email" name="email" className="max-w-[500px]">
-          <Button type="submit">Free Trial</Button>
-        </TextInput>
-      </form>
+      <TrialForm />
     </div>
     {/* END FREE TRIAL FORM  */}
-    {/* INVIOCE */}
+
     <Invoice className="col-span-6" />
-    {/* END INVIOCE */}
-    {/* SPOTLIGHTS */}
+
     {spotlights.map(([title, subtitle, description]) => (
       <div className="col-span-4 grid grid-cols-4 gap-x-10 pb-6" key={title}>
         <div className="col-span-3 flex flex-col gap-y-8">
@@ -62,7 +56,6 @@ const Home = () => (
         </div>
       </div>
     ))}
-    {/* END SPOTLIGHTS */}
   </div>
 );
 

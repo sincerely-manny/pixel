@@ -12,7 +12,7 @@ const styles = {
     active:opacity-80 
     focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-0 focus-visible:ring-primary-1-hover
     disabled:opacity-80 disabled:cursor-not-allowed disabled:pointer-events-none
-    isolate will-change-[shadow,transform]
+
     `,
   size: {
     sm: 'text-sm rounded-xl px-[1.125rem] py-2.5',
@@ -20,8 +20,7 @@ const styles = {
   },
   theme: {
     'white-filled': 'bg-grey-98 text-black hover:bg-grey-94',
-    'violet-filled':
-      'bg-primary-1 text-black hover:bg-primary-1-hover hover:shadow-button-violet shadow-none',
+    'violet-filled': 'bg-primary-1 text-black hover:bg-primary-1-hover  ',
   },
 };
 

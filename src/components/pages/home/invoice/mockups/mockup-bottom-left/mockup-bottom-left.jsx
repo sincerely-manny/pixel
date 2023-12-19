@@ -7,7 +7,7 @@ const MockupBottomLeft = () => (
     viewBox="0 0 410 605"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    className="pointer-events-none absolute bottom-0 left-0 h-full w-full shadow-xl"
+    className="pointer-events-none absolute bottom-0 left-0 h-full w-full shadow-xl-left-light"
     preserveAspectRatio="none"
   >
     <g clipPath="url(#clip0_8_22)">
@@ -21,7 +21,7 @@ const MockupBottomLeft = () => (
           width="410"
           height="606"
         >
-          <g opacity="0.15">
+          <g opacity="0.2">
             <path
               d="M0.000427246 3.00196C0.000427246 1.34511 1.34357 0.00195312 3.00043 0.00195312H407C408.657 0.00195312 410 1.3451 410 3.00195V602.002C410 603.659 408.657 605.002 407 605.002H3.00042C1.34357 605.002 0.000427246 603.659 0.000427246 602.002V3.00196Z"
               fill="url(#paint0_linear_8_22)"

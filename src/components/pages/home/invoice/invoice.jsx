@@ -3,9 +3,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import AccountTable from './account-table';
-import BgBlurredLines from './bg-blurred-lines';
 import BgBlurredShapes from './bg-blurred-shapes';
-import BorderMain from './border-main';
+import BgBlurredWithBorders from './bg-blurred-with-borders';
 import Mockups from './mockups';
 import TableHeader from './table-header';
 
@@ -20,12 +19,11 @@ const Invoice = ({ className: additionalClassName = null }) => {
       <BgBlurredShapes />
       <Mockups />
       <div className="relative col-span-4 col-start-2">
-        <BgBlurredLines />
+        <BgBlurredWithBorders />
         <div className="relative p-6 pb-4 text-white">
           <TableHeader />
           <AccountTable />
         </div>
-        <BorderMain />
       </div>
     </div>
   );

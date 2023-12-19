@@ -1,0 +1,13 @@
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  /* Safari and Chrome */
+  .flex-direction-nav-featured a {
+    margin-top: 4%;
+  }
+
+  /* Safari only override */
+  ::i-block-chrome,
+  .hover\:shadow-button-violet:hover {
+    box-shadow: 0 0 0;
+    color: aqua !important;
+  }
+}

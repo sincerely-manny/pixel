@@ -7,7 +7,7 @@ const MockupBottomRight = () => (
     viewBox="0 0 410 605"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    className="pointer-events-none absolute bottom-0 left-0 h-full w-full shadow-xl"
+    className="pointer-events-none absolute bottom-0 left-0 h-full w-full shadow-xl-right-light"
     preserveAspectRatio="none"
   >
     <g opacity="1">
@@ -20,7 +20,7 @@ const MockupBottomRight = () => (
         width="411"
         height="606"
       >
-        <g opacity="0.15">
+        <g opacity="0.2">
           <path
             d="M410 3.00196C410 1.34511 408.656 0.00195312 407 0.00195312H2.99963C1.34278 0.00195312 -0.000366211 1.3451 -0.000366211 3.00195V602.002C-0.000366211 603.659 1.34278 605.002 2.99963 605.002H407C408.656 605.002 410 603.659 410 602.002V3.00196Z"
             fill="url(#paint0_linear_10_47)"

@@ -31,7 +31,7 @@ const AccountTable = () => (
       <div className="overflow-hidden rounded">
         <div className="relative grid h-8  grid-cols-[2fr_1fr_1fr] items-center text-4xs uppercase">
           <div className="absolute bottom-0 left-0 right-0 top-0 bg-white opacity-40 mix-blend-overlay" />
-          <Double className="indent-3.5">Services</Double>
+          <Double className="ml-3.5">Services</Double>
           <Double>Qty</Double>
           <Double>Annual Price</Double>
         </div>
@@ -40,7 +40,7 @@ const AccountTable = () => (
             {i % 2 === 0 && (
               <div className="absolute bottom-0 left-0 right-0 top-0 bg-white opacity-20 mix-blend-overlay" />
             )}
-            <Double className="indent-3.5">{row[0]}</Double>
+            <Double className="ml-3.5">{row[0]}</Double>
             <span className="opacity-90">{row[1]}</span>
             <span className="font-medium opacity-90">{row[2]}</span>
           </div>
