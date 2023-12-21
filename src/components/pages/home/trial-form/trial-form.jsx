@@ -26,13 +26,15 @@ const TrialForm = () => {
     const { success, data, errors } = await handleTrialFormSubmit(res);
     if (success) {
       console.log('success', data);
-    } else {
+    } else if (errors) {
       Object.entries(errors).forEach(([field, { _errors: err }]) => {
-        setError(field, {
-          type: 'manual',
-          message: err?.join(', '),
-          shouldFocus: true,
-        });
+        if (field !== '_errors') {
+          setError(field, {
+            type: 'server',
+            message: err?.join(', '),
+            shouldFocus: true,
+          });
+        }
       });
     }
   };
