@@ -1,36 +1,32 @@
 import PropTypes from 'prop-types';
+import { forwardRef } from 'react';
 
-import Border from './border';
+import BgWithBorder from './bg-with-border/bg-with-border';
 
-const TextInput = ({ placeholder = '', name, className = '', children = null }) => (
-  <div
-    className={`${className} relative rounded-2xl p-1.5`}
-    role="textbox"
-    aria-label={placeholder}
-  >
-    <div className="absolute left-0 top-0 h-full w-full overflow-hidden rounded-2xl">
-      <div className="absolute left-0 top-0 h-full w-full bg-white bg-opacity-10 mix-blend-overlay" />
-      <div className="absolute left-0 top-[-30%] h-[160%] w-full bg-white-gradient-267deg-to-17p mix-blend-overlay" />
-      <div className="absolute left-0 top-0 h-[160%] w-full bg-white-gradient-122deg-to-50p mix-blend-overlay" />
-    </div>
-
-    <div className="relative flex w-full items-stretch justify-stretch gap-1.5">
-      <input
-        type="text"
-        placeholder={placeholder}
-        name={name}
-        className="remove-autocomplete-styles grow appearance-none rounded-full bg-transparent pl-7 pr-2
-              text-base text-white opacity-80 outline-0 
-              placeholder:bg-violet-gradient placeholder:bg-clip-text placeholder:text-transparent
-              autofill:text-base autofill:text-white focus:outline-none
-              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-1-hover focus-visible:ring-offset-0
+const TextInput = forwardRef(
+  ({ placeholder = '', name, className = '', children = null, ...props }, ref) => (
+    <div className={`${className} relative rounded-2xl`} role="textbox" aria-label={placeholder}>
+      <BgWithBorder />
+      <div className="relative grid grid-cols-[1fr_auto] items-center">
+        <input
+          type="text"
+          placeholder={placeholder}
+          name={name}
+          ref={ref}
+          className={`remove-autocomplete-styles col-start-1 col-end-3 row-start-1 row-end-1 inline-block
+              h-[3.75em] appearance-none rounded-full bg-transparent px-5
+              py-0 text-base leading-[3.75em] text-white opacity-80 outline-0
+              ring-offset-transparent placeholder:bg-violet-gradient placeholder:bg-clip-text placeholder:text-transparent autofill:text-base
+              autofill:text-white focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-1-hover
               [&:-webkit-autofill]:[-webkit-text-fill-color:theme('colors.white')]
-              "
-      />
-      {children}
+              ${children ? 'pr-[11.75rem]' : ''}
+              `}
+          {...props}
+        />
+        <div className="col-start-2 col-end-2 row-start-1 row-end-1 mr-1.5">{children}</div>
+      </div>
     </div>
-    <Border />
-  </div>
+  )
 );
 
 TextInput.propTypes = {
@@ -39,5 +35,13 @@ TextInput.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
 };
+
+TextInput.defaultProps = {
+  placeholder: '',
+  className: '',
+  children: null,
+};
+
+TextInput.displayName = 'TextInput';
 
 export default TextInput;
