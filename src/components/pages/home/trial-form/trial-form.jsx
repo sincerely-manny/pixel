@@ -6,28 +6,46 @@ import { useForm } from 'react-hook-form';
 import Button from 'components/shared/button';
 import TextInput from 'components/shared/text-input';
 
-import handleTrialFormSubmit from './data/action';
+import handleTrialFormSubmit from './action';
 import trialFormSchema from './data/schema';
 
 const TrialForm = () => {
-  const form = useForm({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    setError,
+  } = useForm({
     resolver: zodResolver(trialFormSchema),
     defaultValues: {
       email: '',
     },
   });
 
-  const onTrialFormSubmit = async (data) => {
-    await handleTrialFormSubmit(data);
+  const onTrialFormSubmit = async (res) => {
+    const { success, data, errors } = await handleTrialFormSubmit(res);
+    if (success) {
+      console.log('success', data);
+    } else {
+      Object.entries(errors).forEach(([field, { _errors: err }]) => {
+        setError(field, {
+          type: 'manual',
+          message: err?.join(', '),
+          shouldFocus: true,
+        });
+      });
+    }
   };
 
   return (
-    <form action="/" onSubmit={form.handleSubmit((data) => onTrialFormSubmit(data))}>
+    <form action="/" onSubmit={handleSubmit((data) => onTrialFormSubmit(data))}>
       <TextInput
         placeholder="Enter your email"
         name="email"
         className="max-w-[500px]"
-        {...form.register('email')}
+        {...register('email')}
+        aria-invalid={errors.email ? 'true' : 'false'}
+        error={errors.email?.message}
       >
         <Button type="submit">Free Trial</Button>
       </TextInput>

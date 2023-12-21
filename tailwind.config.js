@@ -172,6 +172,19 @@ module.exports = {
           135deg, #D383FC 21.78%, ${theme('colors.primary.2')} 39.25%,
           ${hexWithOpacity(theme('colors.primary.2'), 0.2)} 86.85%)`,
       }),
+      keyframes: {
+        'spin-slow': {
+          '0%': { transform: 'rotate(0)' },
+        },
+        shakeX: {
+          'from, to': { transform: 'translate3d(0, 0, 0)' },
+          '10%, 30%, 50%, 70%, 90%': { transform: 'translate3d(-10px, 0, 0)' },
+          '20%, 40%, 60%, 80%': { transform: 'translate3d(10px, 0, 0)' },
+        },
+      },
+      animation: {
+        shakeX: 'shakeX 0.5s ease-in-out',
+      },
     },
   },
   plugins: [require('tailwindcss-safe-area')],
