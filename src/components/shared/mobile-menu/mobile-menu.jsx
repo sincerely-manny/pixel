@@ -55,7 +55,7 @@ const MobileMenu = () => {
 
   return (
     <motion.nav
-      className="absolute left-8 right-8 top-16 justify-center rounded-xl bg-white p-8 text-2xl text-black shadow-lg md:left-4 md:right-4"
+      className="container absolute left-8 right-8 top-16 justify-center rounded bg-white p-8 text-2xl text-black shadow-lg md:left-4 md:right-4"
       initial="from"
       animate={controls}
       variants={variants}

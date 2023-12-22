@@ -6,7 +6,7 @@ const BgBlurredShapes = () => (
       viewBox="0 0 916 997"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="pointer-events-none absolute left-1/2 top-1/2 h-auto w-[130%] -translate-x-1/2 -translate-y-1/2 sm:w-[140%]"
+      className="pointer-events-none absolute left-1/2 top-1/2 h-auto w-[130%] -translate-x-1/2 -translate-y-1/2 sm:w-[200%]"
     >
       <g filter="url(#filter0_f_0_1)">
         <path

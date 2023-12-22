@@ -41,7 +41,7 @@ const Home = () => (
 
     {spotlights.map(([title, subtitle, description]) => (
       <div
-        className="col-span-4 grid grid-cols-4 gap-x-10 self-start pb-6 sm:col-span-8 sm:col-start-4"
+        className="col-span-4 grid grid-cols-4 gap-x-10 self-start pb-6 sm:col-span-12 "
         key={title}
       >
         <div className="col-span-3 flex flex-col gap-y-8 self-start md:col-span-4 md:gap-y-4">
