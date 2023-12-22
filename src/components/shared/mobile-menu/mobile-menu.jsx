@@ -42,7 +42,6 @@ const variants = {
 
 const MobileMenu = () => {
   const controls = useAnimation();
-  // eslint-disable-next-line no-unused-vars
   const [isMobileMenuOpen, setMobileMenuOpen] = useAtom(mobileMenuOpenAtom);
   const pathname = usePathname();
 
@@ -56,16 +55,10 @@ const MobileMenu = () => {
 
   return (
     <motion.nav
-      // TODO: Add "top" value equal to the header's height so mobile menu would be positioned right after the header, e.g. "top-20"
-      //       Check out this screenshot for better understanding — https://user-images.githubusercontent.com/20713191/144218387-afd19e0c-c33d-4c8f-8cfe-b6e6214d236c.png
-      // TODO: Add background color, e.g. "bg-white"
-      // className="rounded-md absolute left-8 right-8 z-[-1] hidden w-full px-8 pb-7 pt-4 lg:block md:left-4 md:right-4"
-      className="absolute left-8 right-8 top-16 justify-center rounded-xl bg-white p-8 text-2xl text-black md:left-4 md:right-4"
+      className="absolute left-8 right-8 top-16 justify-center rounded-xl bg-white p-8 text-2xl text-black shadow-lg md:left-4 md:right-4"
       initial="from"
       animate={controls}
       variants={variants}
-      // TODO: Replace the color to the one from the color palette
-      style={{ boxShadow: '0px 10px 20px rgba(26, 26, 26, 0.4)' }}
     >
       <NavigationMenu.Root
         delayDuration="0"

@@ -37,25 +37,25 @@ const Home = () => (
     </div>
     {/* END FREE TRIAL FORM  */}
 
-    <Invoice className="col-span-6 lg:col-span-7 md:col-span-10 md:col-start-2 sm:col-span-12 sm:col-start-1 sm:mt-16 xs:mt-0" />
+    <Invoice className="col-span-6 lg:col-span-7 md:col-span-10 md:col-start-2 sm:col-span-12 sm:col-start-1" />
 
     {spotlights.map(([title, subtitle, description]) => (
       <div
-        className="col-span-4 grid grid-cols-4 gap-x-10 pb-6 sm:col-span-8 sm:col-start-4"
+        className="col-span-4 grid grid-cols-4 gap-x-10 self-start pb-6 sm:col-span-8 sm:col-start-4"
         key={title}
       >
-        <div className="col-span-3 flex flex-col gap-y-8 md:gap-y-4">
-          <div className="flex flex-col gap-3 md:gap-1.5">
+        <div className="col-span-3 flex flex-col gap-y-8 self-start md:col-span-4 md:gap-y-4">
+          <div className="flex flex-col  gap-3 md:gap-1.5">
             <div className="relative w-min">
               <div className="absolute left-0 top-0 h-full w-full rounded-full bg-primary-1 opacity-30 blur-[100px]" />
               <h3 className="relative bg-violet-gradient-2 bg-clip-text pr-2 font-heading text-4xl text-transparent md:text-3.5xl">
                 {title}
               </h3>
             </div>
-            <h4 className="text-xl md:text-lg">{subtitle}</h4>
+            <h4 className="text-xl md:text-lg sm:text-xl">{subtitle}</h4>
           </div>
           <hr className="text-white opacity-10" />
-          <p className="text-lg md:text-base">{description}</p>
+          <p className="text-lg md:text-base sm:text-lg">{description}</p>
         </div>
       </div>
     ))}

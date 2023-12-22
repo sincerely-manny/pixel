@@ -1,3 +1,5 @@
+'use client';
+
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 import { motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
@@ -32,7 +34,7 @@ const Menu = ({ className = '' }) => {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.1 }}
-                    className="shadow-lg absolute mt-3 flex w-full min-w-max flex-col gap-2 overflow-hidden rounded bg-black/50 p-4 font-normal"
+                    className="absolute mt-3 flex w-full min-w-max flex-col gap-2 overflow-hidden rounded bg-black/50 p-4 font-normal shadow-lg"
                   >
                     {item.submenu.map((subitem) => (
                       <NavigationMenu.Link key={subitem.href} asChild>

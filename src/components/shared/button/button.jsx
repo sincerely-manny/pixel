@@ -1,3 +1,5 @@
+'use client';
+
 import clsx from 'clsx';
 import { motion, AnimatePresence } from 'framer-motion';
 import PropTypes from 'prop-types';
@@ -81,12 +83,6 @@ const Button = ({
       whileTap={{
         scale: 0.9,
       }}
-      // whileLeave={{
-      //   boxShadow: 'none',
-      // }}
-      // whileHover={{
-      //   boxShadow: '0px 0px 60px 0px rgba(187, 153, 255, 0.4)',
-      // }}
     >
       <AnimatePresence>
         <motion.div

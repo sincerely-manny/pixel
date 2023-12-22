@@ -9,26 +9,11 @@ module.exports = {
 
     config.module.rules.push(
       {
-        // ...fileLoaderRule,
         test: /\.svg$/i,
         resourceQuery: /url/, // *.svg?url
         issuer: /\.(js|jsx|ts|tsx|css)$/,
         type: 'asset',
         loader: 'svgo-loader',
-        // use: [
-        // {
-        //   loader: require.resolve('url-loader'),
-        //   options: {
-        //     limit: 512,
-        //     publicPath: '/_next/static/images',
-        //     outputPath: 'static/images',
-        //     fallback: require.resolve('file-loader'),
-        //   },
-        // },
-        // {
-        //   loader: require.resolve('svgo-loader'),
-        // },
-        // ],
       },
       {
         test: /\.svg$/i,
