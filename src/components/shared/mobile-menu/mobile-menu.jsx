@@ -23,11 +23,15 @@ const variants = {
       duration: ANIMATION_DURATION,
     },
     transitionEnd: {
-      zIndex: -1,
+      display: 'none',
+      pointerEvents: 'none',
+      opacity: 0,
     },
   },
   to: {
     zIndex: 999,
+    display: 'block',
+    pointerEvents: 'all',
     opacity: 1,
     translateY: 0,
     transition: {
@@ -56,15 +60,19 @@ const MobileMenu = () => {
       //       Check out this screenshot for better understanding — https://user-images.githubusercontent.com/20713191/144218387-afd19e0c-c33d-4c8f-8cfe-b6e6214d236c.png
       // TODO: Add background color, e.g. "bg-white"
       // className="rounded-md absolute left-8 right-8 z-[-1] hidden w-full px-8 pb-7 pt-4 lg:block md:left-4 md:right-4"
-      className="absolute bottom-16 left-8 right-8 top-16 z-[-1] rounded-xl bg-white px-8 pb-7 pt-4 text-black md:left-4 md:right-4"
+      className="absolute left-8 right-8 top-16 justify-center rounded-xl bg-white p-8 text-2xl text-black md:left-4 md:right-4"
       initial="from"
       animate={controls}
       variants={variants}
       // TODO: Replace the color to the one from the color palette
       style={{ boxShadow: '0px 10px 20px rgba(26, 26, 26, 0.4)' }}
     >
-      <NavigationMenu.Root delayDuration="0" orientation="vertical">
-        <NavigationMenu.List className="flex flex-col gap-3">
+      <NavigationMenu.Root
+        delayDuration="0"
+        orientation="vertical"
+        className="flex items-center justify-center"
+      >
+        <NavigationMenu.List className="flex flex-col justify-start gap-3">
           {menuItems.map((item) => (
             <NavigationMenu.Item
               key={item.href}
@@ -92,7 +100,7 @@ const MobileMenu = () => {
                       animate={{ opacity: 1, height: 'auto' }}
                       exit={{ opacity: 0, height: 0 }}
                       transition={{ duration: 0.1 }}
-                      className="ml-2 mt-2 flex flex-col gap-1 overflow-hidden font-normal text-black"
+                      className="ml-2 mt-2 flex flex-col gap-1 overflow-hidden font-light text-black"
                     >
                       {item.submenu.map((subitem) => (
                         <NavigationMenu.Link key={subitem.href} asChild>
@@ -101,6 +109,7 @@ const MobileMenu = () => {
                             data-current={pathname.startsWith(subitem.href)}
                             aria-current={pathname.startsWith(subitem.href) ? 'step' : false}
                             className="hover:underline data-[current=true]:font-medium data-[current=true]:text-primary-1"
+                            onClick={() => setMobileMenuOpen(false)}
                           >
                             {subitem.title}
                           </Link>
@@ -111,7 +120,11 @@ const MobileMenu = () => {
                 </>
               ) : (
                 <NavigationMenu.Link asChild>
-                  <Link to={item.href} className="hover:underline">
+                  <Link
+                    to={item.href}
+                    className="hover:underline"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
                     {item.title}
                   </Link>
                 </NavigationMenu.Link>

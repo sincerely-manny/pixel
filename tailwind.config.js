@@ -115,6 +115,14 @@ module.exports = {
           lineHeight: '1em',
         },
       ],
+      '2.4xl': [
+        '3rem',
+        {
+          lineHeight: '1.125em',
+          letterSpacing: '-0.02em',
+          fontWeight: '400',
+        },
+      ],
       '2.5xl': [
         '3.75rem',
         {

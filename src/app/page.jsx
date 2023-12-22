@@ -20,7 +20,7 @@ const spotlights = [
 ];
 
 const Home = () => (
-  <div className="relative grid grid-cols-12 items-center gap-x-10 gap-y-[7.4rem] sm:gap-y-24">
+  <div className="relative grid grid-cols-12 items-center gap-x-10 gap-y-[7.4rem] sm:gap-y-20">
     {/* FREE TRIAL FORM */}
     <div className="relative col-span-6 flex flex-col gap-10 lg:col-span-5 md:col-span-12">
       <div className="absolute left-1/2 top-0 aspect-square w-[calc(100%+500px)] max-w-[100vw] -translate-x-1/2 -translate-y-2/3 rounded-full bg-violet-radial opacity-[15%]" />
@@ -37,7 +37,7 @@ const Home = () => (
     </div>
     {/* END FREE TRIAL FORM  */}
 
-    <Invoice className="col-span-6 lg:col-span-7 md:col-span-10 md:col-start-2 sm:col-span-12 sm:col-start-1" />
+    <Invoice className="col-span-6 lg:col-span-7 md:col-span-10 md:col-start-2 sm:col-span-12 sm:col-start-1 sm:mt-16 xs:mt-0" />
 
     {spotlights.map(([title, subtitle, description]) => (
       <div

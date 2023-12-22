@@ -1,6 +1,6 @@
 @layer base {
   html {
-    @apply w-screen bg-black xl:text-[14px] md:text-[16px];
+    @apply w-screen bg-black xl:text-[14px] md:text-[16px] sm:text-[12px];
   }
 
   body {
@@ -19,7 +19,7 @@
   }
 
   h1 {
-    @apply text-3xl text-grey-98 lg:text-2.5xl;
+    @apply text-3xl text-grey-98 lg:text-2.5xl sm:text-2.4xl;
   }
 
   h3 {
