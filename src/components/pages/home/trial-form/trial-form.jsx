@@ -1,6 +1,7 @@
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 import Button from 'components/shared/button';
@@ -15,27 +16,46 @@ const TrialForm = () => {
     handleSubmit,
     formState: { errors },
     setError,
+    setValue,
   } = useForm({
     resolver: zodResolver(trialFormSchema),
     defaultValues: {
       email: '',
     },
   });
+  const [formDisabled, setFormDisabled] = useState(false);
+  const [buttonState, setButtonState] = useState('default');
 
   const onTrialFormSubmit = async (res) => {
-    const { success, data, errors } = await handleTrialFormSubmit(res);
-    if (success) {
-      console.log('success', data);
-    } else if (errors) {
-      Object.entries(errors).forEach(([field, { _errors: err }]) => {
-        if (field !== '_errors') {
-          setError(field, {
-            type: 'server',
-            message: err?.join(', '),
-            shouldFocus: true,
-          });
-        }
+    setFormDisabled(true);
+    setButtonState('loading');
+    try {
+      const { errors, success } = await handleTrialFormSubmit(res);
+      if (success) {
+        setButtonState('success');
+      } else if (errors) {
+        Object.entries(errors).forEach(([field, { _errors: err }]) => {
+          if (field !== '_errors') {
+            setError(field, {
+              type: 'server',
+              message: err?.join(', '),
+              shouldFocus: true,
+            });
+          } else {
+            setError('root.serverError', {
+              type: 'server',
+              message: err?.join(', '),
+            });
+          }
+        });
+      }
+    } catch (err) {
+      setValue('email', 'Oops! Something went wrong', {
+        shouldValidate: false,
+        shouldDirty: false,
       });
+      setFormDisabled(true);
+      setButtonState('error');
     }
   };
 
@@ -48,8 +68,11 @@ const TrialForm = () => {
         {...register('email')}
         aria-invalid={errors.email ? 'true' : 'false'}
         error={errors.email?.message}
+        disabled={formDisabled}
       >
-        <Button type="submit">Free Trial</Button>
+        <Button type="submit" disabled={formDisabled} state={buttonState}>
+          Free Trial
+        </Button>
       </TextInput>
     </form>
   );
