@@ -46,7 +46,7 @@ module.exports = {
     },
     fontSize: {
       '4xs': [
-        '10px',
+        '0.625rem',
         {
           lineHeight: '1em',
           fontWeight: 500,
@@ -54,7 +54,7 @@ module.exports = {
         },
       ],
       '3xs': [
-        '11px',
+        '0.6875rem',
         {
           lineHeight: '1em',
           fontWeight: '500',
@@ -62,7 +62,7 @@ module.exports = {
         },
       ],
       '2xs': [
-        '12px',
+        '0.75rem',
         {
           lineHeight: '1em',
           letterSpacing: '0.02em',
@@ -70,7 +70,7 @@ module.exports = {
         },
       ],
       xs: [
-        '14px',
+        '0.875rem',
         {
           lineHeight: '1em',
           letterSpacing: '0em',
@@ -78,7 +78,7 @@ module.exports = {
         },
       ],
       sm: [
-        '15px',
+        '0.9375rem',
         {
           lineHeight: '1em',
           letterSpacing: '0.02em',
@@ -86,7 +86,7 @@ module.exports = {
         },
       ],
       base: [
-        '16px',
+        '1rem',
         {
           lineHeight: '1.25em',
           letterSpacing: '0.02em',
@@ -94,7 +94,7 @@ module.exports = {
         },
       ],
       lg: [
-        '18px',
+        '1.125rem',
         {
           lineHeight: '1.5em',
           letterSpacing: '0.02em',
@@ -102,7 +102,7 @@ module.exports = {
         },
       ],
       xl: [
-        '20px',
+        '1.25rem',
         {
           lineHeight: '1.5em',
           letterSpacing: '0.02em',
@@ -110,21 +110,37 @@ module.exports = {
         },
       ],
       '2xl': [
-        '22px',
+        '1.375rem',
         {
           lineHeight: '1em',
         },
       ],
-      '3xl': [
-        '76px',
+      '2.5xl': [
+        '3.75rem',
         {
           lineHeight: '1.125em',
           letterSpacing: '-0.02em',
           fontWeight: '400',
         },
       ],
+      '3xl': [
+        '4.75rem',
+        {
+          lineHeight: '1.125em',
+          letterSpacing: '-0.02em',
+          fontWeight: '400',
+        },
+      ],
+      '3.5xl': [
+        '7rem',
+        {
+          lineHeight: '1em',
+          letterSpacing: '-0.04em',
+          fontWeight: '200',
+        },
+      ],
       '4xl': [
-        '136px',
+        '8.5rem',
         {
           lineHeight: '1em',
           letterSpacing: '-0.04em',
@@ -177,9 +193,9 @@ module.exports = {
           '0%': { transform: 'rotate(0)' },
         },
         shakeX: {
-          'from, to': { transform: 'translate3d(0, 0, 0)' },
-          '10%, 30%, 50%, 70%, 90%': { transform: 'translate3d(-10px, 0, 0)' },
-          '20%, 40%, 60%, 80%': { transform: 'translate3d(10px, 0, 0)' },
+          'from, to': { transform: 'translateX(0)' },
+          '10%, 30%, 50%, 70%, 90%': { transform: 'translateX(-10px)' },
+          '20%, 40%, 60%, 80%': { transform: 'translateX(10px)' },
         },
       },
       animation: {

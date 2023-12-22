@@ -18,7 +18,7 @@ const Invoice = ({ className: additionalClassName = null }) => {
     <div className={className}>
       <BgBlurredShapes />
       <Mockups />
-      <div className="relative col-span-4 col-start-2">
+      <div className="relative col-span-4 col-start-2 sm:col-span-6 sm:col-start-1">
         <BgBlurredWithBorders />
         <div className="relative p-6 pb-4 text-white">
           <TableHeader />

@@ -1,7 +1,10 @@
-/* TODO: Add global styles: font-size, color, and other if needed */
 @layer base {
+  html {
+    @apply w-screen bg-black xl:text-[14px] md:text-[16px];
+  }
+
   body {
-    @apply min-w-[320px] bg-black font-sans text-base text-grey-94 antialiased;
+    @apply w-screen min-w-[320px] overflow-x-clip bg-black font-sans text-base text-grey-94 antialiased;
     -webkit-tap-highlight-color: transparent;
   }
 
@@ -16,7 +19,7 @@
   }
 
   h1 {
-    @apply text-3xl text-grey-98;
+    @apply text-3xl text-grey-98 lg:text-2.5xl;
   }
 
   h3 {

@@ -12,7 +12,7 @@ const LayoutMain = ({ children }) => (
   <>
     <SEO />
     <Header />
-    <main className="container mt-24">{children}</main>
+    <main className="container mt-24 md:mt-16">{children}</main>
     <Footer />
     <MobileMenu />
   </>

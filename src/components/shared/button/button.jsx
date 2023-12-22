@@ -10,9 +10,7 @@ import Error from './images/error.inline.svg';
 import Loading from './images/loading.inline.svg';
 import Success from './images/success.inline.svg';
 
-// Example of the code — https://user-images.githubusercontent.com/20713191/144215307-35538500-b9f0-486d-abed-1a14825bb75c.png
 const styles = {
-  // flex overflow-hidden justify-center items-center
   base: `font-semibold text-center relative
     overflow-hidden
     cursor-pointer 

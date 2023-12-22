@@ -11,11 +11,15 @@ const styles = {
   // TODO: Add sizes. Better to write down all sizes and go from higher to lower, e.g. "xl", "lg", "md", "sm", "xs"
   //       The name of the size cannot be lower than the font size that being used, e.g. "sm" size cannot have font-size "xs"
   //       Check out an example by a link above for better understanding
-  size: {},
+  size: {
+    default: '',
+  },
   // TODO: Add themes. Better to name the theme using this pattern: "${color-name}-${theme-type}", e.g. "black-filled"
   //       If there is no dividing between theme types, then feel free to use just color names, e.g. "black"
   //       Check out an example by a link above for better understanding
-  theme: {},
+  theme: {
+    default: '',
+  },
 };
 
 /** @type {React.ForwardRefRenderFunction<?, Link.propTypes>} */
@@ -53,10 +57,10 @@ Link.propTypes = {
 };
 
 Link.defaultProps = {
-  className: null,
+  className: '',
   to: null,
-  size: null,
-  theme: null,
+  size: 'default',
+  theme: 'default',
 };
 
 Link.displayName = 'Link';

@@ -64,7 +64,7 @@ const TrialForm = () => {
       <TextInput
         placeholder="Enter your email"
         name="email"
-        className="max-w-[500px]"
+        className="max-w-[500px] sm:w-full"
         {...register('email')}
         aria-invalid={errors.email ? 'true' : 'false'}
         error={errors.email?.message}

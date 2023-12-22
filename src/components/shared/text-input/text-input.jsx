@@ -5,7 +5,11 @@ import BgWithBorder from './bg-with-border/bg-with-border';
 
 const TextInput = forwardRef(
   ({ placeholder, name, className, children, error, disabled, ...props }, ref) => (
-    <div className={`${className} relative rounded-2xl`} role="textbox" aria-label={placeholder}>
+    <div
+      className={`${className} relative mr-1 rounded-2xl`}
+      role="textbox"
+      aria-label={placeholder}
+    >
       <BgWithBorder />
       <div
         className={`relative grid grid-cols-[1fr_auto] items-center
