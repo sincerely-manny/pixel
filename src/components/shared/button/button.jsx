@@ -68,7 +68,6 @@ const Button = ({
   };
 
   const Tag = to ? Link : motion.button;
-
   return (
     <Tag
       ref={ref}
@@ -95,7 +94,7 @@ const Button = ({
         >
           {state === 'default' && children}
           {state === 'loading' && (
-            <Loading className="h-[1.875rem] w-auto shrink-0 grow-0 animate-spin" />
+            <Loading className="h-[1.875rem] w-auto shrink-0 grow-0 animate-spin sm:h-[1.9rem]" />
           )}
           {state === 'success' && <Success className="h-[0.925rem] w-auto shrink-0 grow-0" />}
           {state === 'error' && <Error className="h-[0.875rem] w-auto shrink-0 grow-0" />}
